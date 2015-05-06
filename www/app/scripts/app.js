@@ -8,26 +8,15 @@
  *
  * Main module of the application.
  */
-angular
-  .module('wwwApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
+var flowApp = angular.module('flowApp', ['ngAnimate','ngCookies','ngResource','ngRoute','ngSanitize','ngTouch']);
+
+flowApp.config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+        .when('/', {
+            templateUrl: 'views/dashboard.html',
+            controller: 'DashboardCtrl'
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
+});
